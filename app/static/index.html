@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sales Q&amp;A</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>Sales Q&amp;A</h1>
+    <span id="status">Checking server...</span>
+  </header>
+
+  <main>
+    <form id="ask-form">
+      <label for="question">Ask a question about the sales data</label>
+      <div class="row">
+        <input id="question" type="text" maxlength="500" autocomplete="off"
+               placeholder="e.g. Which product generated the highest revenue?">
+        <button id="ask-button" type="submit">Ask</button>
+      </div>
+    </form>
+
+    <div id="examples" class="examples"></div>
+
+    <section id="result" hidden>
+      <h2>Answer</h2>
+      <p id="answer"></p>
+      <p id="method" class="note"></p>
+
+      <h2>Supporting data</h2>
+      <div class="table-wrap">
+        <table id="figures"></table>
+      </div>
+      <details>
+        <summary>SQL used</summary>
+        <pre id="sql"></pre>
+      </details>
+    </section>
+
+    <section id="data-quality" class="note">
+      <span id="quality-summary"></span>
+      <details id="rejected-details" hidden>
+        <summary>Show rejected rows</summary>
+        <ul id="rejected-list"></ul>
+      </details>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
